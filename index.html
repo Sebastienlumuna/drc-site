@@ -1,0 +1,2218 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRC Store | La plateforme d'applications congolaises</title>
+    <meta name="description" content="Premier store d'applications 100% congolais. Hébergement gratuit pour développeurs locaux avec support iOS et Android.">
+    
+    <!-- OG Tags -->
+    <meta property="og:title" content="DRC Store | Applications Made in Congo">
+    <meta property="og:description" content="Hébergez vos applications iOS et Android sur la première plateforme congolaise avec 6 mois gratuits">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://drcstore.cd">
+    <meta property="og:image" content="">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Couleurs de la RDC (bleu, jaune, rouge) */
+            --drc-blue: #207fcc;
+         --drc-yellow: #ecba30e9;
+            --drc-red:  #f1b308e9;
+            
+            /* Design System amélioré */
+            --primary: var(--drc-blue);
+            --primary-dark: rgb(153, 31, 31);
+            --primary-light: #E6F2FF;
+            --secondary: var(--drc-yellow);
+            --accent: var(--drc-red);
+            --dark: #1a1616;
+            --darker: #12121D;
+            --light: #F8F9FA;
+            --lighter: #FFFFFF;
+            --gray: #575252;
+            --light-gray: #E9ECEF;
+            --white: #FFFFFF;
+            
+            /* Spacing */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-xxl: 3rem;
+            --space-xxxl: 4rem;
+            
+            /* Typography */
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 1.875rem;
+            --text-4xl: 2.25rem;
+            --text-5xl: 3rem;
+            --text-6xl: 3.75rem;
+            --text-7xl: 4.5rem;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+            --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.15);
+            
+            /* Borders */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            --radius-2xl: 24px;
+            --radius-full: 9999px;
+            
+            /* Transitions */
+            --transition-fast: 0.15s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.45s ease;
+        }
+
+        /* Reset */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            line-height: 1.2;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        h1 {
+            font-size: var(--text-6xl);
+            margin-bottom: var(--space-md);
+        }
+
+        h2 {
+            font-size: var(--text-5xl);
+            margin-bottom: var(--space-md);
+        }
+
+        h3 {
+            font-size: var(--text-3xl);
+            margin-bottom: var(--space-sm);
+        }
+
+        h4 {
+            font-size: var(--text-2xl);
+            margin-bottom: var(--space-sm);
+        }
+
+        p {
+            margin-bottom: var(--space-md);
+            color: var(--gray);
+            font-size: var(--text-lg);
+        }
+
+        .text-lead {
+            font-size: var(--text-xl);
+            color: var(--dark);
+        }
+
+        /* Layout */
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--space-xl);
+        }
+
+        .section {
+            padding: var(--space-xxxl) 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--space-xxl);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            bottom: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: var(--radius-full);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-md) var(--space-xl);
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all var(--transition-normal);
+            border: none;
+            cursor: pointer;
+            white-space: nowrap;
+            font-size: var(--text-lg);
+            gap: var(--space-sm);
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--dark);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-secondary:hover {
+            background-color: #F0B800;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+            color: var(--white);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-accent:hover {
+            background-color: #B00E1F;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none !important;
+            box-shadow: none !important;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-normal);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 48px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-weight: 800;
+            font-size: var(--text-2xl);
+            color: var(--dark);
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-desktop {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xl);
+        }
+
+        .nav-link {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+            transition: color var(--transition-fast);
+            font-size: var(--text-lg);
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background-color: var(--primary);
+            bottom: -6px;
+            left: 0;
+            transition: width var(--transition-fast);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: var(--space-sm);
+            z-index: 1001;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 150px;
+            padding-bottom: 120px;
+            background: linear-gradient(135deg, rgba(0, 115, 206, 0.05) 0%, rgba(252, 209, 22, 0.05) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" opacity="0.03"><path fill="%230073CE" d="M400,0C179,0,0,179,0,400s179,400,400,400s400-179,400-400S621,0,400,0z"/></svg>') no-repeat;
+            background-size: cover;
+            z-index: -1;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xxl);
+            position: relative;
+        }
+
+        .hero-text {
+            flex: 1;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            margin-bottom: var(--space-md);
+            color: var(--darker);
+            font-size: var(--text-6xl);
+            line-height: 1.1;
+        }
+
+        .hero-title span {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: var(--text-xl);
+            color: var(--gray);
+            margin-bottom: var(--space-xl);
+            max-width: 600px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-device-container {
+            position: relative;
+            perspective: 1000px;
+            max-width: 500px;
+        }
+
+        .hero-device {
+            position: relative;
+            z-index: 2;
+            filter: drop-shadow(var(--shadow-2xl));
+            transform-style: preserve-3d;
+            animation: float 6s ease-in-out infinite;
+            width: 100%;
+            height: auto;
+        }
+
+        .hero-device-shadow {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 40px;
+            background: radial-gradient(ellipse at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            filter: blur(8px);
+            z-index: 1;
+        }
+
+        .hero-badge {
+            position: absolute;
+            top: 20%;
+            right: 0;
+            transform: translateX(50%);
+            background-color: var(--white);
+            padding: var(--space-sm) var(--space-lg);
+            border-radius: var(--radius-full);
+            box-shadow: var(--shadow-xl);
+            font-weight: 700;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            animation: pulse 2s infinite;
+            font-size: var(--text-lg);
+        }
+
+        .hero-badge svg {
+            flex-shrink: 0;
+            color: var(--secondary);
+        }
+
+        /* Countdown Circle */
+        .countdown-circle {
+            display: flex;
+            justify-content: center;
+            margin-top: var(--space-xxl);
+        }
+
+        .countdown-container {
+            position: relative;
+            width: 320px;
+            height: 320px;
+        }
+
+        .countdown-svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .countdown-circle-bg {
+            fill: none;
+            stroke: var(--light-gray);
+            stroke-width: 8;
+        }
+
+        .countdown-circle-fill {
+            fill: none;
+            stroke: var(--primary);
+            stroke-width: 8;
+            stroke-linecap: round;
+            stroke-dasharray: 879.2;
+            stroke-dashoffset: 879.2;
+            transition: stroke-dashoffset 1s ease;
+        }
+
+        .countdown-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .countdown-item {
+            text-align: center;
+            margin: var(--space-xs) 0;
+        }
+
+        .countdown-number {
+            font-size: var(--text-4xl);
+            font-weight: 800;
+            color: var(--primary);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .countdown-label {
+            font-size: var(--text-sm);
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-xxl);
+        }
+
+        .feature-card {
+            background-color: var(--white);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xxl) var(--space-xl);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-normal);
+            border-top: 5px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: translateY(-100%);
+            transition: transform var(--transition-normal);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .feature-card:hover::before {
+            transform: translateY(0);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: var(--radius-lg);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-lg);
+        }
+
+        .feature-icon svg {
+            color: var(--white);
+            width: 30px;
+            height: 30px;
+        }
+
+        .feature-title {
+            margin-bottom: var(--space-md);
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            background: linear-gradient(135deg, rgba(0, 115, 206, 0.03) 0%, rgba(252, 209, 22, 0.03) 100%);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: var(--space-xxl) auto 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            border-radius: var(--radius-full);
+        }
+
+        .timeline-items {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xxl);
+        }
+
+        .timeline-item {
+            display: flex;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            justify-content: flex-start;
+            padding-right: calc(50% + var(--space-xl));
+        }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-end;
+            padding-left: calc(50% + var(--space-xl));
+        }
+
+        .timeline-content {
+            background-color: var(--white);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xxl) var(--space-xl);
+            box-shadow: var(--shadow-lg);
+            width: 100%;
+            max-width: 450px;
+            position: relative;
+            transition: all var(--transition-normal);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            transform: translateY(-50%);
+            border: 5px solid var(--white);
+            box-shadow: var(--shadow-md);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -45px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -45px;
+        }
+
+        .timeline-step {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--white);
+            border: 5px solid var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: var(--primary);
+            font-size: var(--text-2xl);
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+        }
+
+        .timeline-item:hover .timeline-step {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-step {
+            right: calc(50% - 30px);
+        }
+
+        .timeline-item:nth-child(even) .timeline-step {
+            left: calc(50% - 30px);
+        }
+
+        /* Developers Callout */
+        .developers-callout {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            padding: var(--space-xxxl) 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .developers-callout::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            z-index: 1;
+        }
+
+        .developers-callout .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .developers-callout h2 {
+            color: var(--white);
+            margin-bottom: var(--space-md);
+        }
+
+        .developers-callout p {
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .platform-badges {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-xl);
+            margin-top: var(--space-xxl);
+            flex-wrap: wrap;
+        }
+
+        .platform-badge {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-xl);
+            padding: var(--space-lg) var(--space-xl);
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            transition: all var(--transition-normal);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .platform-badge:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .platform-badge svg {
+            width: 30px;
+            height: 30px;
+        }
+
+        .platform-badge span {
+            font-weight: 600;
+            font-size: var(--text-lg);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-xxl);
+        }
+
+        .testimonial-card {
+            background-color: var(--lighter);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xxl) var(--space-xl);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            transition: all var(--transition-normal);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 100px;
+            color: rgba(0, 115, 206, 0.05);
+            font-family: Georgia, serif;
+            line-height: 1;
+            z-index: 1;
+        }
+
+        .testimonial-content {
+            margin-bottom: var(--space-xl);
+            position: relative;
+            z-index: 2;
+            font-style: italic;
+            font-size: var(--text-lg);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-light);
+        }
+
+        .author-info h4 {
+            margin-bottom: 0;
+        }
+
+        .author-info p {
+            color: var(--gray);
+            margin-bottom: 0;
+            font-size: var(--text-sm);
+        }
+
+        /* FAQ */
+        .faq-item {
+            background-color: var(--white);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: var(--space-md);
+            overflow: hidden;
+            transition: all var(--transition-normal);
+            border: 1px solid var(--light-gray);
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-light);
+        }
+
+        .faq-question {
+            padding: var(--space-xl);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            background-color: var(--white);
+            transition: all var(--transition-fast);
+        }
+
+        .faq-item:hover .faq-question {
+            color: var(--primary);
+        }
+
+        .faq-answer {
+            padding: 0 var(--space-xl);
+            max-height: 0;
+            overflow: hidden;
+            transition: all var(--transition-slow);
+        }
+
+        .faq-item.active .faq-answer {
+            padding-bottom: var(--space-xl);
+            max-height: 500px;
+        }
+
+        .faq-toggle {
+            width: 28px;
+            height: 28px;
+            position: relative;
+            transition: all var(--transition-normal);
+            flex-shrink: 0;
+            margin-left: var(--space-md);
+        }
+
+        .faq-toggle::before,
+        .faq-toggle::after {
+            content: '';
+            position: absolute;
+            background-color: var(--primary);
+            transition: all var(--transition-normal);
+        }
+
+        .faq-toggle::before {
+            width: 20px;
+            height: 3px;
+            left: 4px;
+            top: 12px;
+        }
+
+        .faq-toggle::after {
+            width: 3px;
+            height: 20px;
+            left: 12px;
+            top: 4px;
+        }
+
+        .faq-item.active .faq-toggle::after {
+            transform: rotate(90deg);
+            opacity: 0;
+        }
+
+        /* Application Form Section */
+        .application-form {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--white);
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-2xl);
+            padding: var(--space-xxxl) var(--space-xxl);
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" opacity="0.03"><path d="M0 0H100V100H0V0Z" fill="%230073CE"/></svg>');
+            background-size: 30px 30px;
+            border: 1px solid var(--light-gray);
+        }
+
+        .form-group {
+            margin-bottom: var(--space-xl);
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: var(--space-sm);
+            font-weight: 600;
+            color: var(--dark);
+            font-size: var(--text-lg);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: var(--space-md) var(--space-lg);
+            border: 2px solid var(--light-gray);
+            border-radius: var(--radius-lg);
+            font-size: var(--text-lg);
+            transition: all var(--transition-fast);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(0, 115, 206, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Notification Banner */
+        .notification-banner {
+            position: fixed;
+            bottom: var(--space-xl);
+            right: var(--space-xl);
+            background-color: var(--white);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-2xl);
+            padding: var(--space-lg);
+            max-width: 400px;
+            transform: translateY(150%);
+            transition: transform var(--transition-slow);
+            z-index: 999;
+            border-left: 5px solid var(--primary);
+            display: flex;
+            gap: var(--space-md);
+            align-items: center;
+        }
+
+        .notification-banner.show {
+            transform: translateY(0);
+        }
+
+        .notification-close {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--gray);
+            font-size: var(--text-xl);
+            margin-left: auto;
+            flex-shrink: 0;
+        }
+
+        .notification-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--primary);
+            font-size: var(--text-xl);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--darker);
+            color: var(--white);
+            padding: var(--space-xxxl) 0 var(--space-xl);
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-xxl);
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+
+        .footer-logo img {
+            height: 50px;
+        }
+
+        .footer-logo-text {
+            font-weight: 800;
+            font-size: var(--text-2xl);
+            background: linear-gradient(90deg, var(--secondary), var(--white));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .footer-about {
+            max-width: 350px;
+        }
+
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-links h4 {
+            margin-bottom: var(--space-lg);
+            color: var(--white);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: var(--space-md);
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+            display: inline-block;
+            padding: var(--space-xs) 0;
+            font-size: var(--text-lg);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+
+        .footer-social a {
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-normal);
+            font-size: var(--text-xl);
+        }
+
+        .footer-social a:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .footer-bottom {
+            margin-top: var(--space-xxl);
+            padding-top: var(--space-xl);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: var(--text-sm);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: var(--text-5xl);
+            }
+            
+            .section {
+                padding: var(--space-xxl) 0;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-subtitle {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .hero-image {
+                margin-top: var(--space-xxl);
+            }
+
+            .hero-badge {
+                right: 50%;
+                transform: translateX(50%);
+                top: -20px;
+            }
+            
+            .section-title {
+                margin-bottom: var(--space-xl);
+            }
+            
+            .section-title::after {
+                bottom: -12px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-desktop {
+                display: none;
+                position: fixed;
+                top: 90px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: var(--space-xl);
+                box-shadow: var(--shadow-xl);
+                gap: var(--space-lg);
+                z-index: 999;
+            }
+
+            .nav-desktop.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-items {
+                gap: var(--space-xl);
+            }
+
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                justify-content: flex-start;
+                padding-left: calc(60px + var(--space-xl));
+                padding-right: 0;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-step,
+            .timeline-item:nth-child(even) .timeline-step {
+                left: 0;
+                right: auto;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content::before,
+            .timeline-item:nth-child(even) .timeline-content::before {
+                left: -35px;
+                right: auto;
+            }
+
+            .application-form {
+                padding: var(--space-xxl) var(--space-xl);
+            }
+            
+            .hero-title {
+                font-size: var(--text-4xl);
+            }
+            
+            .hero-subtitle {
+                font-size: var(--text-lg);
+            }
+            
+            .countdown-container {
+                width: 280px;
+                height: 280px;
+            }
+            
+            .notification-banner {
+                bottom: var(--space-md);
+                right: var(--space-md);
+                left: var(--space-md);
+                max-width: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 var(--space-lg);
+            }
+            
+            .hero {
+                padding-top: 120px;
+                padding-bottom: var(--space-xxl);
+            }
+            
+            .hero-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .hero-actions .btn {
+                width: 100%;
+            }
+            
+            .platform-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .platform-badge {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: var(--space-xl);
+            }
+            
+            .countdown-container {
+                width: 240px;
+                height: 240px;
+            }
+            
+            .countdown-number {
+                font-size: var(--text-3xl);
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: translateX(50%) scale(1);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            }
+            50% {
+                transform: translateX(50%) scale(1.05);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            }
+            100% {
+                transform: translateX(50%) scale(1);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(150%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-400 {
+            animation-delay: 0.4s;
+        }
+/* Nouveau style pour le repositionnement du compte à rebours */
+.countdown-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.countdown-item {
+    position: absolute;
+    text-align: center;
+}
+
+.countdown-item.days {
+    position: absolute;
+    top: -180px !important;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    color: var(--primary);
+    background: rgba(255,255,255,0.9);
+    padding: 8px 16px;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.countdown-item.hours {
+    left: -170px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.countdown-item.minutes {
+    right: -170px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.countdown-item.seconds {
+    position: absolute;  /* ← Changez de 'relative' à 'absolute' */
+    top: 50%;           /* Centre verticalement */
+    left: 50%;          /* Centre horizontalement */
+    transform: translate(-50%, -50%); /* Ajustement fin */
+    margin: 0;          /* Supprime les marges automatiques */
+    z-index: 2;         /* Place au-dessus du cercle */
+    width: max-content; /* Évite le débordement */
+}
+
+.countdown-circle-fill {
+    /* Pour que le cercle soit derrière les secondes */
+    z-index: -1;
+}
+
+        /* Utility Classes */
+        .text-primary {
+            color: var(--primary);
+        }
+
+        .text-secondary {
+            color: var(--secondary);
+        }
+
+        .text-accent {
+            color: var(--accent);
+        }
+
+        .bg-light {
+            background-color: var(--light);
+        }
+
+        .bg-white {
+            background-color: var(--white);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .w-100 {
+            width: 100%;
+        }
+
+        .mt-1 { margin-top: var(--space-xs); }
+        .mt-2 { margin-top: var(--space-sm); }
+        .mt-3 { margin-top: var(--space-md); }
+        .mt-4 { margin-top: var(--space-lg); }
+        .mt-5 { margin-top: var(--space-xl); }
+
+        .mb-1 { margin-bottom: var(--space-xs); }
+        .mb-2 { margin-bottom: var(--space-sm); }
+        .mb-3 { margin-bottom: var(--space-md); }
+        .mb-4 { margin-bottom: var(--space-lg); }
+        .mb-5 { margin-bottom: var(--space-xl); }
+       
+#countdownMessage .countdown-item.days {
+    position: absolute;
+    top: -70px !important;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    color: var(--primary);
+    background: rgba(255,255,255,0.9);
+    padding: 8px 16px;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+    #countdownMessage .countdown-item.days {
+        top: -50px !important;
+    }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <a href="#" class="logo">
+                    <img src="5.png" alt="DRC Store Logo">
+                    <span class="logo-text">DRC Store</span>
+                </a>
+                
+                <nav class="nav-desktop">
+                    <a href="#home" class="nav-link">Accueil</a>
+                    <a href="#features" class="nav-link">Fonctionnalités</a>
+                    <a href="#how-it-works" class="nav-link">Processus</a>
+                    <a href="#developers" class="nav-link">Développeurs</a>
+                    <a href="#apply" class="nav-link">Postuler</a>
+                    <button class="btn btn-primary" id="applyBtn" disabled>Postuler</button>
+                </nav>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="https://st4.depositphotos.com/12985790/22759/i/380/depositphotos_227591002-stock-photo-african-american-businessman-suit-holding.jpg">
+                        <path d="M3 12H21" stroke="#1A1A2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 6H21" stroke="#1A1A2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 18H21" stroke="#1A1A2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text animate-fade">
+                    <h1 class="hero-title">La révolution digitale démarre bientot...  <span>DRC Store.</span></h1>
+                    <p class="hero-subtitle">la plateforme officielle et sécurisée pour télécharger, découvrir et créer les meilleures applications congolaises.</p>
+                    
+                    <div class="hero-actions">
+                        <a href="#apply" class="btn btn-primary">
+                            <i class="fas fa-rocket"></i> Postuler maintenant
+                        </a>
+                    </div>
+                    
+                    <!-- Countdown Circle -->
+                    <div class="countdown-circle">
+                        <div class="countdown-container">
+                            <svg class="countdown-svg" viewBox="0 0 120 120">
+                                <circle class="countdown-circle-bg" cx="60" cy="60" r="54" />
+                                <circle class="countdown-circle-fill" cx="60" cy="60" r="54" />
+                            </svg>
+<div class="countdown-content">
+                                <div class="countdown-item">
+                                    <div class="countdown-content">
+                                        <!-- Jours au-dessus du cercle -->
+                                        <div class="countdown-item days">
+                                            <div class="countdown-number" id="days">00</div>
+                                            <div class="countdown-label">Jours</div>
+                                        </div>
+                                        
+                                        <!-- Heures à gauche du cercle -->
+                                        <div class="countdown-item hours">
+                                            <div class="countdown-number" id="hours">00</div>
+                                            <div class="countdown-label">Heures</div>
+                                        </div>
+                                        
+                                        <!-- Secondes au centre du cercle -->
+                                        <div class="countdown-item seconds">
+                                            <div class="countdown-number" id="seconds">00</div>
+                                            <div class="countdown-label">Secondes</div>
+                                        </div>
+                                        
+                                        <!-- Minutes à droite du cercle -->
+                                        <div class="countdown-item minutes">
+                                            <div class="countdown-number" id="minutes">00</div>
+                                            <div class="countdown-label">Minutes</div>
+                                        </div>
+                                    </div>                                    
+                        </div>
+                    </div>
+                </div>
+                
+              
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section bg-light" id="features">
+        <div class="container">
+            <div class="section-title animate-fade">
+                <h2>Pourquoi choisir DRC Store ?</h2>
+                <p>La plateforme idéale pour vos applications Made in Congo</p>
+            
+            <div class="features-grid">
+                <div class="feature-card animate-fade delay-100">
+                    <div class="feature-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="feature-title">Visibilité locale et internationale</h3>
+                    <p>Bénéficiez d'une plateforme dédiée au marché congolais avec des utilisateurs engagés tout en ayant la possibilité de toucher un public international.</p>
+                </div>
+                
+                <div class="feature-card animate-fade delay-200">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="feature-title">6 mois gratuits</h3>
+                    <p>Profitez d'un hébergement et d'une distribution sans frais pendant les 6 premiers mois, pour iOS et Android.</p>
+                </div>
+                
+                <div class="feature-card animate-fade delay-300">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="feature-title">Support technique expert</h3>
+                    <p>En plus, notre support technique expert vous accompagne à chaque étape, garantissant performance, stabilité et sécurité pour un déploiement fiable et optimal.</p>
+                </div>
+                
+                <div class="feature-card animate-fade delay-400">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">Analytics avancés</h3>
+                    <p>Grâce à nos outils d’analytics avancés, DRC Store vous fournit des données précises et détaillées sur l’usage de vos applications. Vous suivez en temps réel les comportements utilisateurs, les performances et les tendances, pour optimiser votre stratégie et maximiser l’impact de vos innovations.</p>
+                </div>
+                
+                <div class="feature-card animate-fade delay-100">
+                    <div class="feature-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3 class="feature-title">Monétisation simplifiée</h3>
+                    <p>DRC Store facilite la monétisation de vos applications avec des solutions simples et intégrées, vous permettant de générer des revenus rapidement tout en gardant le contrôle total sur vos modèles économiques.</p>
+                </div>
+                
+                <div class="feature-card animate-fade delay-200">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="feature-title">Communauté de développeurs</h3>
+                    <p>DRC Store réunit une communauté dynamique de développeurs congolais, favorisant l’échange, la collaboration et le partage d’expertise pour stimuler l’innovation locale et accélérer la réussite de vos projets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-title animate-fade">
+                <h2>Comment intégrer le DRC Store ?</h2>
+                <p>Un processus simple en 4 étapes</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-items">
+                    <div class="timeline-item">
+                        <div class="timeline-step">1</div>
+                        <div class="timeline-content">
+                            <h4>Phase de pré-lancement</h4>
+                            <p>Pendant cette période, nous préparons la plateforme et informons la communauté. Le compte à rebours est visible sur notre site.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-step">2</div>
+                        <div class="timeline-content">
+                            <h4>Ouverture des candidatures</h4>
+                            <p>24h avant la fin du compte à rebours, le formulaire de candidature sera activé pour que vous puissiez soumettre votre application.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-step">3</div>
+                        <div class="timeline-content">
+                            <h4>Évaluation technique</h4>
+                            <p>Notre équipe examinera toutes les candidatures selon des critères de qualité, d'innovation et de pertinence pour le marché congolais.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-step">4</div>
+                        <div class="timeline-content">
+                            <h4>Intégration et lancement</h4>
+                            <p>Les applications sélectionnées seront intégrées à la plateforme et bénéficieront d'une campagne de promotion pour le lancement officiel.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Developers Callout -->
+    <section class="section developers-callout" id="developers">
+        <div class="container">
+            <div class="animate-fade">
+                <h2>Développeurs Congolais, c'est votre moment !</h2>
+                <p class="text-lead">Le DRC Store offre une opportunité unique de mettre en avant vos applications mobiles avec un hébergement gratuit pendant 6 mois, que vous soyez sur iOS ou Android. Notre plateforme est conçue pour valoriser les talents locaux et offrir aux utilisateurs congolais des applications adaptées à leurs besoins.</p>
+                
+                <div class="platform-badges">
+                    <div class="platform-badge">
+                        <i class="fab fa-apple"></i>
+                        <span>Applications iOS</span>
+                    </div>
+                    
+                    <div class="platform-badge">
+                        <i class="fab fa-android"></i>
+                        <span>Applications Android</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section testimonials">
+        <div class="container">
+            <div class="section-title animate-fade">
+                <h2>Ils croient en notre vision</h2>
+                <p>Des témoignages de partenaires et développeurs</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card animate-fade delay-100">
+                    <div class="testimonial-content">
+                        <p>"En tant que développeur congolais, trouver une plateforme dédiée à nos applications est une opportunité incroyable. Le DRC Store va révolutionner l'écosystème tech en RDC."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://st4.depositphotos.com/13193658/29653/i/380/depositphotos_296539600-stock-photo-happy-african-american-programmer-looking.jpg" alt="Patrick M." class="testimonial-avatar">
+                        <div class="author-info">
+                            <h4>Patrick Mkcode.</h4>
+                            <p>Développeur iOS, Kinshasa</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card animate-fade delay-200">
+                    <div class="testimonial-content">
+                        <p>"Nous soutenons pleinement cette initiative qui va permettre à nos jeunes talents de s'exprimer et de proposer des solutions numériques adaptées à notre contexte local."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://st5.depositphotos.com/13571094/69133/i/380/depositphotos_691330090-stock-photo-mobile-communication-portrait-cheerful-businessman.jpg" alt="Sarah K." class="testimonial-avatar">
+                        <div class="author-info">
+                            <h4>Sarah Kambi.</h4>
+                            <p>Directrice Tech Hub, Lubumbashi</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card animate-fade delay-300">
+                    <div class="testimonial-content">
+                        <p>"Je suis vraiment impressionné par DRC Store ! Enfin une plateforme unique où je peux héberger et distribuer mes applis à la fois pour iOS et Android. C’est une vraie révolution pour nous, développeurs congolais, qui avions besoin d’un espace local, simple et efficace. Ça facilite tellement la vie et ouvre de grandes opportunités ! »"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://st4.depositphotos.com/12985790/22759/i/380/depositphotos_227591002-stock-photo-african-american-businessman-suit-holding.jpg" alt="David T." class="testimonial-avatar">
+                        <div class="author-info">
+                            <h4>David banuani.</h4>
+                            <p>Fondateur d'App Edu, Kinshasa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-title animate-fade">
+                <h2>Questions fréquentes</h2>
+                <p>Trouvez des réponses à vos interrogations</p>
+            </div>
+            
+            <div class="animate-fade delay-100">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Quels types d'applications sont acceptées sur le DRC Store ?</span>
+                        <div class="faq-toggle"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nous acceptons tous types d'applications (utilitaires, éducatives, jeux, services, etc.) à condition qu'elles apportent une réelle valeur aux utilisateurs congolais. Les applications doivent être originales, fonctionnelles et respecter nos guidelines de qualité.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Comment fonctionne l'hébergement gratuit pendant 6 mois ?</span>
+                        <div class="faq-toggle"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Pendant les 6 premiers mois, vous ne payez aucun frais d'hébergement ou de distribution sur le DRC Store. Cela inclut le stockage de votre application, la bande passante pour les téléchargements, et l'accès à nos outils d'analytics. Après cette période, des frais modiques s'appliqueront.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Dois-je avoir une application déjà publiée pour postuler ?</span>
+                        <div class="faq-toggle"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Non, nous acceptons aussi bien les applications déjà publiées que les projets en développement. Pour les applications non encore publiées, nous évaluerons votre prototype ou version beta selon son potentiel et sa maturité.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Quels sont les critères de sélection ?</span>
+                        <div class="faq-toggle"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nous évaluons : la qualité technique, l'expérience utilisateur, l'originalité, la pertinence pour le marché congolais, le potentiel d'impact social ou économique, et la viabilité à long terme du projet.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Comment puis-je monétiser mon application sur le DRC Store ?</span>
+                        <div class="faq-toggle"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Vous pouvez intégrer tous les modèles de monétisation classiques (achats in-app, publicité, abonnements) et nous vous aiderons à implémenter des solutions de paiement adaptées au marché congolais (mobile money, etc.).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form Section -->
+    <section class="section" id="apply">
+        <div class="container">
+            <div class="section-title animate-fade">
+                <h2>Postuler pour l'hébergement gratuit</h2>
+                <p>Remplissez le formulaire pour soumettre votre candidature</p>
+            </div>
+            
+            <div class="application-form animate-fade delay-100" id="applicationFormContainer" style="display: none;">
+                <form id="applicationForm">
+                    <div class="form-group">
+                        <label for="fullName" class="form-label">Nom complet</label>
+                        <input type="text" id="fullName" class="form-control" required placeholder="Votre nom complet">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email professionnel</label>
+                        <input type="email" id="email" class="form-control" required placeholder="email@exemple.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Téléphone (WhatsApp)</label>
+                        <input type="tel" id="phone" class="form-control" required placeholder="+243 XX XXX XX XX">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="appName" class="form-label">Nom de l'application</label>
+                        <input type="text" id="appName" class="form-control" required placeholder="Le nom officiel de votre application">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description" class="form-label">Description courte (max 200 mots)</label>
+                        <textarea id="description" class="form-control" required placeholder="Décrivez brièvement votre application, son objectif et sa valeur ajoutée"></textarea>
+                    </div>
+                    
+                    
+                    <div class="form-group">
+                        <label for="appLink" class="form-label">Lien vers l'application (si disponible)</label>
+                        <input type="url" id="applink" class="form-control" placeholder="https://votreapplication.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="apkfile" class="form-label">Fichier apk de l'application (si disponible)</label>
+                        <input type="file" id="apkfile" class="form-control-file" accept=".apk" 
+                        required
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Plateforme(s)</label>
+                        <div style="display: flex; gap: var(--space-md);">
+                            <label style="display: flex; align-items: center; gap: var(--space-sm);">
+                                <input type="checkbox" name="platform" value="ios"> iOS
+                            </label>
+                            <label style="display: flex; align-items: center; gap: var(--space-sm);">
+                                <input type="checkbox" name="platform" value="android"> Android
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="status" class="form-label">Statut du projet</label>
+                        <select id="status" class="form-control" required>
+                            <option value="">Sélectionnez le statut actuel...</option>
+                            <option value="prototype">Prototype</option>
+                            <option value="alpha">Version Alpha</option>
+                            <option value="beta">Version Beta</option>
+                            <option value="published">Déjà publiée</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="team" class="form-label">Décrivez votre équipe (optionnel)</label>
+                        <textarea id="team" class="form-control" placeholder="Qui sont les membres de votre équipe ? Leurs rôles et expériences ?"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary w-100">
+                        <i class="fas fa-paper-plane"></i> Soumettre ma candidature
+                    </button>
+                </form>
+            </div>
+            
+            <div class="text-center animate-fade" id="countdownMessage">
+                <h3 class="mb-3">Le formulaire de candidature sera disponible dans :</h3>
+                <div class="countdown-circle">
+                    <div class="countdown-container">
+                        <svg class="countdown-svg" viewBox="0 0 120 120">
+                            <circle class="countdown-circle-bg" cx="60" cy="60" r="54" />
+                            <circle class="countdown-circle-fill" cx="60" cy="60" r="54" />
+                        </svg>
+                        <div class="countdown-content">
+                            <!-- Jours au-dessus du cercle -->
+                            <div class="countdown-item days">
+                                <div class="countdown-number" id="formDays">00</div>
+                                <div class="countdown-label">Jours</div>
+                            </div>
+                            
+                            <!-- Heures à gauche du cercle -->
+                            <div class="countdown-item hours">
+                                <div class="countdown-number" id="formHours">00</div>
+                                <div class="countdown-label">Heures</div>
+                            </div>
+                            
+                            <!-- Secondes au centre du cercle -->
+                            <div class="countdown-item seconds">
+                                <div class="countdown-number" id="formSeconds">00</div>
+                                <div class="countdown-label">Secondes</div>
+                            </div>
+                            
+                            <!-- Minutes à droite du cercle -->
+                            <div class="countdown-item minutes">
+                                <div class="countdown-number" id="formMinutes">00</div>
+                                <div class="countdown-label">Minutes</div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <p class="mt-4">Préparez dès maintenant votre dossier pour être parmi les premiers à postuler !</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="5.png" alt="DRC Store Logo">
+                        <span class="footer-logo-text">DRC Store</span>
+                    </div>
+                    <p>La première plateforme d'applications mobiles 100% congolaise, dédiée aux développeurs locaux et à la promotion du numérique Made in Congo.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#features">Fonctionnalités</a></li>
+                        <li><a href="#how-it-works">Processus</a></li>
+                        <li><a href="#developers">Développeurs</a></li>
+                        <li><a href="#apply">Postuler</a></li>
+                    </ul>
+                </div>
+                
+                <div class="
+                .
+                        </div>
+                        
+                         
+                      
+                        
+
+                        <div class="footer-links">
+                            <h4>Contact</h4>
+                            <ul>
+                                <li><a href="mailto:contact@drcstore.cd">contact@drcstore.cd</a></li>
+                                <li><a href="tel:+243XXXXXXXXX">+243 XX XXX XX XX</a></li>
+                                <li>Kinshasa, RDC</li>
+                            </ul>
+                            
+                            <div class="footer-social">
+                                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" aria-label="tiktok"><i class="fab fa-tiktok"></i></a>
+                                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-bottom">
+                        <p>&copy; 2025 DRC Store. Tous droits réservés. Fièrement Congolais.</p>
+                    </div>
+                </div>
+            </footer>
+        
+            <!-- Notification Banner -->
+            <div class="notification-banner" id="notificationBanner">
+                <div class="notification-icon">
+                    <i class="fas fa-bell"></i>
+                </div>
+                <div class="notification-content">
+                    <h4>Ne manquez pas le lancement !</h4>
+                    <p id="notificationMessage">Il reste <span id="notificationDays">X</span> jours avant l'ouverture des candidatures pour le DRC Store.</p>
+                </div>
+                <button class="notification-close" id="notificationClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        
+            <script>
+                // Mobile Menu Toggle
+                const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+                const navDesktop = document.querySelector('.nav-desktop');
+                
+                mobileMenuBtn.addEventListener('click', () => {
+                    navDesktop.classList.toggle('active');
+                    mobileMenuBtn.innerHTML = navDesktop.classList.contains('active') ? 
+                        '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6 18" stroke="#1A1A2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 6L18 18" stroke="#1A1A2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>' : 
+                        '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12H21" stroke="#1A1A2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 6H21" stroke="#1A1A2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 18H21" stroke="#1A1A2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+                });
+                
+                // Countdown Timer
+                const launchDate = new Date();
+                launchDate.setDate(launchDate.getDate() + 100); // Set to 100 days from now
+                
+                function updateCountdown() {
+                    const now = new Date();
+                    const diff = launchDate - now;
+                    // Calculate time remaining// Centrer les secondes
+document.querySelectorAll('.countdown-item.seconds').forEach(sec => {
+    sec.style.marginLeft = 'auto';
+    sec.style.marginRight = 'auto';
+});
+                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                    
+                    // Calculate percentage for circle animation
+                    const totalSeconds = 14 * 24 * 60 * 60;
+                    const remainingSeconds = Math.max(0, Math.floor(diff / 1000));
+                    const percentage = (remainingSeconds / totalSeconds) * 100;
+                    const circumference = 2 * Math.PI * 54;
+                    const offset = circumference - (percentage / 100) * circumference;
+                    
+                    // Update circle animation
+                    const circleFill = document.querySelector('.countdown-circle-fill');
+                    if (circleFill) {
+                        circleFill.style.strokeDashoffset = offset;
+                    }
+                    
+                    // Update display
+                    document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                    document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                    document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                    document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+                    
+                    document.getElementById('formDays').textContent = days.toString().padStart(2, '0');
+                    document.getElementById('formHours').textContent = hours.toString().padStart(2, '0');
+                    document.getElementById('formMinutes').textContent = minutes.toString().padStart(2, '0');
+                    document.getElementById('formSeconds').textContent = seconds.toString().padStart(2, '0');
+                    
+                    // Update notification
+                    document.getElementById('notificationDays').textContent = days;
+                    
+                    // Check if we're within 24 hours of launch
+                    if (diff <= 24 * 60 * 60 * 1000) {
+                        document.getElementById('applicationFormContainer').style.display = 'block';
+                        document.getElementById('countdownMessage').style.display = 'none';
+                        document.getElementById('applyBtn').disabled = false;
+                    }
+                    
+                    // If countdown is finished
+                    if (diff <= 0) {
+                        clearInterval(countdownInterval);
+                    }
+                }
+                
+                // Initial call and set interval
+                updateCountdown();
+                const countdownInterval = setInterval(updateCountdown, 1000);
+                
+                // Notification System
+                const notificationBanner = document.getElementById('notificationBanner');
+                const notificationClose = document.getElementById('notificationClose');
+                const notificationMessage = document.getElementById('notificationMessage');
+                const notificationDays = document.getElementById('notificationDays');
+                
+                // Check if user has visited before
+                if (!localStorage.getItem('drcstore_first_visit')) {
+                    // First visit - set the date
+                    const today = new Date();
+                    localStorage.setItem('drcstore_first_visit', today.toString());
+                    
+                    // Show notification after 2 days
+                    setTimeout(() => {
+                        const now = new Date();
+                        const launchDiff = launchDate - now;
+                        const daysLeft = Math.ceil(launchDiff / (1000 * 60 * 60 * 24));
+
+notificationDays.textContent = daysLeft;
+notificationMessage.textContent = 'Il reste ${daysLeft} jours avant louverture des candidatures pour le DRC Store.';
+                        
+                        notificationBanner.classList.add('show');
+                    }, 2 * 24 * 60 * 60 * 1000); // 2 days in milliseconds
+                }
+                
+                // Close notification
+                notificationClose.addEventListener('click', () => {
+                    notificationBanner.classList.remove('show');
+                });
+                
+                // Form Submission
+                document.getElementById('applicationForm').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Validate form
+                    let isValid = true;
+                    const form = e.target;
+                    
+                    Array.from(form.elements).forEach(element => {
+                        if (element.required && !element.value.trim()) {
+                            element.style.borderColor = 'var(--accent)';
+                            isValid = false;
+                        } else {
+                            element.style.borderColor = '#e2e8f0';
+                        }
+                    });
+                    
+                    // Check at least one platform is selected
+                    const platforms = document.querySelectorAll('input[name="platform"]:checked');
+                    if (platforms.length === 0) {
+                        isValid = false;
+                        alert('Veuillez sélectionner au moins une plateforme (iOS ou Android)');
+                    }
+                    
+                    if (isValid) {
+                        // In production, you would send this data to your server
+                        alert('Merci pour votre candidature ! Nous examinerons votre application et vous contacterons sous peu.');
+                        form.reset();
+                        
+                        // Disable form after submission
+                        document.getElementById('applyBtn').disabled = true;
+                        document.getElementById('applicationFormContainer').style.display = 'none';
+                        document.getElementById('countdownMessage').innerHTML = `
+                            <h3>Merci pour votre candidature !</h3>
+                            <p>Nous avons bien reçu votre demande et l'examinerons dans les plus brefs délais.</p>
+                            <p>Vous recevrez une réponse par email dans les 7 jours ouvrables.</p>
+                        `;
+                        document.getElementById('countdownMessage').style.display = 'block';
+                    } else {
+                        alert('Veuillez remplir tous les champs obligatoires.');
+                    }
+                });
+                
+                // FAQ Toggle
+                document.querySelectorAll('.faq-question').forEach(question => {
+                    question.addEventListener('click', () => {
+                        const faqItem = question.parentElement;
+                        faqItem.classList.toggle('active');
+                    });
+                });
+                
+                // Smooth scrolling for anchor links
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 90,
+                                behavior: 'smooth'
+                            });
+                            
+                            // Close mobile menu if open
+                            if (window.innerWidth <= 768) {
+                                navDesktop.classList.remove('active');
+                                mobileMenuBtn.innerHTML = '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12H21" stroke="#1A1A2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 6H21" stroke="#1A1A2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 18H21" stroke="#1A1A2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+                            }
+                        }
+                    });
+                });
+                
+                // Intersection Observer for animations
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animate-fade');
+                        }
+                    });
+                }, {
+                    threshold: 0.1
+                });
+                
+                document.querySelectorAll('.animate-fade').forEach(element => {
+                    observer.observe(element);
+                });
+                
+                // Header scroll effect
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        document.querySelector('header').style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+                    } else {
+                        document.querySelector('header').style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+                    }
+                });
+            </script>
+        </body>
+        </html>
+
+            
+        </body>
+        </html>
+        
