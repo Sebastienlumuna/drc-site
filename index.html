@@ -1256,6 +1256,19 @@
                 height: 280px;
             }
             
+            /* Rapprochement des éléments countdown sur mobile uniquement */
+            .countdown-item.days {
+                top: -140px !important;
+            }
+            
+            .countdown-item.hours {
+                left: -120px;
+            }
+            
+            .countdown-item.minutes {
+                right: -120px;
+            }
+            
             .notification-banner {
                 bottom: var(--space-md);
                 right: var(--space-md);
@@ -1313,7 +1326,7 @@
                 font-weight: 700;
             }
             
-            /* Repositionnement des éléments countdown sur mobile */
+            /* Rapprochement avancé des éléments countdown sur petit mobile */
             .countdown-item.days {
                 top: -90px !important;
                 left: 50%;
@@ -1354,9 +1367,9 @@
             #countdownMessage .countdown-item.days {
                 top: -70px !important;
             }
-                }
+        }
         
-        /* Media query pour très petits écrans */
+        /* Media query pour très petits écrans mobiles */
         @media (max-width: 480px) {
             .countdown-container {
                 width: 180px;
@@ -1373,7 +1386,7 @@
                 font-weight: 700;
             }
             
-            /* Repositionnement encore plus compact */
+            /* Rapprochement ultra-compact sur très petit mobile */
             .countdown-item.days {
                 top: -70px !important;
                 font-size: 1rem;
@@ -1409,7 +1422,7 @@
             }
         }
         
-        /* Media query pour écrans ultra-compacts */
+        /* Media query pour écrans ultra-compacts mobiles */
         @media (max-width: 360px) {
             .countdown-container {
                 width: 160px;
@@ -1426,7 +1439,7 @@
                 font-weight: 700;
             }
             
-            /* Repositionnement ultra-compact */
+            /* Rapprochement maximal sur écrans ultra-compacts */
             .countdown-item.days {
                 top: -60px !important;
                 font-size: 0.9rem;
@@ -1553,7 +1566,7 @@
 
         .countdown-item.days {
             position: absolute;
-            top: -140px !important;
+            top: -180px !important;
             left: 50%;
             transform: translateX(-50%);
             font-size: 1.5rem;
@@ -1565,14 +1578,14 @@
         }
 
         .countdown-item.hours {
-            left: -120px;
+            left: -170px;
             top: 50%;
             transform: translateY(-50%);
             color: var(--secondary);
         }
 
         .countdown-item.minutes {
-            right: -120px;
+            right: -170px;
             top: 50%;
             transform: translateY(-50%);
             color: var(--accent);
